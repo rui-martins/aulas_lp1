@@ -13,7 +13,7 @@ namespace ex3_home
             int xdim, ydim;
             string temp;
             float[,] matrix;
-            float minNum;
+            float minNum = 0f;
 
             Console.Write("Insert X value: ");
             temp = Console.ReadLine();
@@ -36,7 +36,18 @@ namespace ex3_home
                 }
             }
 
+            minNum = matrix[0, 0];
 
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    if (minNum > matrix[i, j])
+                    {
+                        minNum = matrix[i, j];
+                    }
+                }
+            }
 
 
             Console.WriteLine("Min number in array is " + minNum);
